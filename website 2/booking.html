@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<script type="text/javascript">
+function MM_validateForm() { //v4.0
+  if (document.getElementById){
+    var i,p,q,nm,test,num,min,max,errors='',args=MM_validateForm.arguments;
+    for (i=0; i<(args.length-2); i+=3) { test=args[i+2]; val=document.getElementById(args[i]);
+      if (val) { nm=val.name; if ((val=val.value)!="") {
+        if (test.indexOf('isEmail')!=-1) { p=val.indexOf('@');
+          if (p<1 || p==(val.length-1)) errors+='- '+nm+' must contain an e-mail address.\n';
+        } else if (test!='R') { num = parseFloat(val);
+          if (isNaN(val)) errors+='- '+nm+' must contain a number.\n';
+          if (test.indexOf('inRange') != -1) { p=test.indexOf(':');
+            min=test.substring(8,p); max=test.substring(p+1);
+            if (num<min || max<num) errors+='- '+nm+' must contain a number between '+min+' and '+max+'.\n';
+      } } } else if (test.charAt(0) == 'R') errors += '- '+nm+' is required.\n'; }
+    } if (errors) alert('The following error(s) occurred:\n'+errors);
+    document.MM_returnValue = (errors == '');
+} }
+</script>
+</head>
+<link href="layout.css" rel="stylesheet" type="text/css">
+<body>
+<div id="wrapper">
+<div class="h1"  id="logo"> <p> See Food Eat Food <img src=" the right logo.jpg" alt="logo" height="165" width="253"></p>
+</div>
+<div id="menu">
+<ul>
+         <li><a href= "index.html"  class="noBorder leftEdge">home </a></li>
+       <li><a href="menu.html">menu </a></li>
+       <li><a href="booking.html">booking </a></li>
+       <li><a href="slide.html">slideshow </a></li>
+       <li><a href="mobile.html"> app </a> </li>
+       <li><a href="report.html" class="rightEdge">report</a> </li
+  ></ul>
+</div>
+  <div id="content" onClick="MM_validateForm('name','','R');MM_validateForm('name','','R','email','','RisEmail','card no.','','RisNum','address','','R','postcode','','R');return document.MM_returnValue"> 
+  <form id="booking" name="booking" method="post"  action="confirmation.php">
+    <table width="50" border = "0" cell padding = "0" onfocus="MM_validateForm('card no.','','RisNum');return document.MM_returnValue">
+ <td width="25%" onfocus="MM_validateForm('name','','R');return document.MM_returnValue">
+ 
+ 
+name:
+<input name="name" type="text" id="name" size="40" maxlength="20">
+</td>
+
+<tr>
+  <td onfocus="MM_validateForm('email','','NisEmail');return document.MM_returnValue">Email:
+<input name="email" type="text" id="email" size="40" maxlength="30">
+</td></tr>
+
+<td width="25%"> people:
+<select name="people">
+<option value=" 1 person"> 1 person </option>
+<option value=" 2 people"> 2 people</option>
+<option value="3 people "> 3 people </option>
+<option value="4 people "> 4 people </option>
+<option value="5 people "> 5 people </option>
+<option value="6 people "> 6 people </option>
+<option value="7 people "> 7 people </option>
+<option value="8 people "> 8 people </option>
+<option value="9 people "> 9 people </option>
+<option value="10 people "> 10 people </option>
+<option value="11 people "> 11 people </option>
+<option value="12 people "> 12 people </option>
+<option value="13 people "> 13 people </option>
+<option value="14 people "> 14 people </option>
+<option value="15 people "> 15 people </option>
+<option value="16 people "> 16 people </option>
+<option value="17 people "> 17 people </option>
+<option value="18 people "> 18 people </option>
+<option value="19 people "> 19 people </option>
+<option value="20 people "> 20 people </option>
+</select>
+</td>
+<tr> <td> card number: 
+<input name="card number." type="password" id="card number." value=" "  size="40" maxlength="20">
+</td></tr>
+
+
+<tr> <td> 
+address:
+<input name ="address"  type="text" id="address" max size="40" maxlength="50">
+</td> </tr>
+
+<tr> <td>
+postcode:
+<input name ="postcode" type="text" id="postcode" size="40" maxlength="30">
+</td> </tr>
+
+<tr> <td> 
+telephone: 
+<input name ="telephone" type="tel"  size="40" maxlength="12">
+
+</td> </tr>
+
+<tr> <td>
+date:
+<input name="date" type="date" id="date" size="40" maxlength="30">
+
+</td> 
+  </tr>
+
+<tr> <td>
+time:
+<input name = "time" type="time"  id="time" size="40" maxlength="20">
+
+</td> </tr>
+
+<tr>
+<td><input type="submit" name="Submit" value="Submit"></td>
+
+</tr>
+</table>
+</form>
+  
+  </div>
+  
+  <div id="advertising" class="h2">
+  <p> book a table now! </p>
+ 
+  
+  <img src="images/Restaurant.jpg" alt="image of restaurant" height="350" width="325">
+  
+   </div>
+  
+ <div id="copywire"> 
+   
+ <p> <h3 style="text-align:center">  Copyright © </h3></p>
+ <p> <h3 style="text-align:center">  Eduard Marchevsky</h3></p>
+ 
+ </div>
+
+</div>
+
+</body>
+</html>
+

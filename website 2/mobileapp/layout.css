@@ -1,0 +1,97 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	background-color:#77ABD5;
+}
+#wrapper {
+	height: 900px;
+	width: 900px;
+	margin-top:0px;
+	margin-right:auto;
+	margin-left:auto;
+	background-color:#FFFFF;
+}
+.h1 {
+	font-size:26px;
+	color: #FFFFFF;
+	font-family:"Courier New", Courier, monospace;
+	font-style: italic;
+	text-align: center;
+}
+
+
+.h2 {
+	font-size:36px;
+	color:#007694;
+	font-style:normal;
+}
+	
+#logo {
+	float: left;
+	height: 200px;
+	width: 900px;
+	background-color:#3B4EAA;
+
+}
+
+#menu {
+	float:left;
+	background-color:#ED4346;
+	height:75px;
+	width:900px;	
+}
+
+ #menu ul li {
+	float:left;
+	list-style-type:none;
+}
+
+#menu ul li a {
+	background-color: #326CE1;
+	text-decoration: none;
+	display: block;
+	width: 142px;
+	height: 30px;
+	line-height: 30px;
+	border-left: thin solid #3BAB9E;
+	color: #FFFFFF;
+	text-align: center;
+}
+#menu ul li a:hover {
+	background-color: #1608C7;
+	
+}
+.noBorder {
+	border-left-style:none !important;	
+	
+}
+
+
+.leftEdge {
+border-radius: 8px 0px 0px 8px;	
+}
+
+
+.rightEdge {
+	border-radius: 0px 8px 8px 0px;
+}
+#content {
+	height: 700px;
+	width: 550px;
+	background-color:#FFFFFF;
+	float:left;
+}
+#advertising {
+	height: 700px;
+	width: 325px;
+	float:right;
+	background-color:#FFFFFF;
+	
+}
+#copywire {
+	height: 100px;
+	width: 900px;
+	float:left;
+	background-color:#ED4346;
+	
+}

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet href="themenu.css" type="text/css"?>
+<menu>
+  <food><name>Fish and Chips</name>
+    <price>£13.95</price>
+    <description>In a traditional or tempura batter, with mushy peas, tartare sauce and twice-cooked British chips or French fries. Choose line-caught haddock or line-caught cod.</description>
+  </food>
+  
+  <food><name>Lobster Spaghetti</name>
+    <price>£19.95</price>
+    <description>half lobster in a creamy tomato, herb and brandy sauce.</description>
+  </food>
+  <food><name>Whole Baked Lobster</name>
+    <price>£24.95</price>
+    <description> In garlic butter with French fries and mayonnaise.</description>
+  </food>
+  <food><name>Seafood Grill</name>
+    <price>£21.95</price>
+    <description>Scottish salmon fillet, gilt-head bream, Scottish scallops, whole king prawn and Scottish rope-grown mussels, with new potatoes, spinach and chilli coriander butter.</description>
+  </food>
+  <food><name>Sirloin Steak</name>
+    <price>£17.95</price>
+    <description>A tender sirloin cut with twice-cooked British chips, a flat field mushroom, pickled onion rings and Béarnaise sauce .</description>
+  </food>
+  <food><name>Cappuccino</name>
+    <price>£2.60</price>
+    <description>coffee made with espresso and milk.</description>
+  </food>
+  <food><name>Mocha</name>
+    <price>£2.60</price>
+    <description> It is based on espresso and hot milk, but with added chocolate, typically in the form of sweet cocoa powder.</description>
+  </food>
+  <food><name>Tea</name>
+    <price>£2.10</price>
+    <description> choose between decaffeinated coffee and regular coffee.</description>
+  </food>
+  <food><name>Coke/diet Coke</name>
+    <price>£2.35</price>
+    <description> choose between diet Coke and regular Coke.</description>
+  </food>
+    <food><name>Bloody mary</name>
+    <price>£6.95</price>
+    <description> Bloody Mary</description>
+  </food>
+   <food><name>Red Snapper</name>
+    <price>£6.95</price>
+    <description>Tanquerary gin, spiced tomato juice, celery, lemon and a crevette</description>
+  </food>
+  <food><name>Savino Merlot. Italy</name>
+    <price>£16.75</price>
+    <description> Is a red wine which is,Bright, clean red fruit flavours. Only in bottle form.</description>
+  </food>
+  
+  
+  </menu>

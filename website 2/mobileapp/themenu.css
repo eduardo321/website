@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+breakfast-menu
+{
+background-color:#A4292C;
+width:500px;
+}
+food
+{
+display:block;
+margin-left:0;
+}
+name
+{
+font-size:20pt;
+}
+price
+{
+font-size:20pt;
+}
+description,calories
+{
+	display:block;
+	color:#ED1115;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+	font-size:14px;
+}
+table, th, td {
+    border:0px solid black;
+	color:#FD0606;
+}
+th, td {
+    padding:0px;
+	background-color:#F3CCCC;
+}

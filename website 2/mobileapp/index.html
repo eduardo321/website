@@ -1,0 +1,299 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery Mobile Web App</title>
+
+</head> 
+<body> 
+
+<div data-role="page" id="page1">
+	<div data-role="header">
+  <link href="test.css" rel="stylesheet" type="text/css">
+		<h1>Home</h1>
+        
+	</div>
+	<div data-role="content">
+    	<p>Welcome to "See Food Eat Food". If you are looking for a great fish restaurant to eat we are definitely the place for you. We have a great selection of food available for you such as everyone's favourite classic fish and chips. We also have a wide variety of food, drinks, deserts and lots more. We have food from Stilton steak to shrimp, and are sure that you will enjoy a tasty meal no matter what you pick. You have a choice of sitting inside or outside if you would prefer it, because we are all about giving customers what they want. See Food Eat Food do lunches and dinners. We are located in London and are open between 12:00pm - 8:00pm everyday.</p>
+    	<p> <img src="mobile app images/riverside fish and chips.jpg" width="544" alt="logo" height="300"> </p> 
+   
+     
+
+ 
+  
+
+   </div>
+   
+   <div>
+		<ul data-role="listview">
+       <li><a href="#page1">Home</a> </li>
+			<li><a href="#page2">Menu</a></li>
+            <li><a href="#page3">Booking</a></li>
+			<li><a href="#page4">Slideshow</a></li> 
+            <li><a href="#page5">Report</a></li></ul>		
+	</div>
+	
+</div>
+
+<div data-role="page" id="page2">
+	<div data-role="header">
+		<h1>Menu</h1>
+	</div>
+	<div data-role="content">	
+	<link  href="themenu.css" rel="stylesheet" type="text/css">
+    <script>
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.open("GET","themenu.xml",false);
+xmlhttp.send();
+xmlDoc=xmlhttp.responseXML; 
+
+document.write("<table><tr><th>name</th><th>description</th><th>price</th></tr>");
+var x=xmlDoc.getElementsByTagName("food");
+for (i=0;i<x.length;i++)
+  { 
+  document.write("<tr><td>");
+  document.write(x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue);
+  document.write("</td><td> </br>");
+  document.write(x[i].getElementsByTagName("description")[0].childNodes[0].nodeValue);
+    document.write("</td><td> </br>" );
+  document.write(x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue);
+  document.write("</td></tr>");
+  }
+document.write("</table>");
+</script>
+
+	
+ 
+	</div>
+       <ul data-role="listview">
+        <li><a href="#page1">Home</a> </li>
+			<li><a href="#page2">Menu</a></li>
+            <li><a href="#page3">Booking</a></li>
+			<li><a href="#page4">Slideshow</a></li> 
+            <li><a href="#page5">Report</a></li>
+            </ul>
+	</div>
+
+<div data-role="page" id="page3">
+	<div data-role="header">
+    
+       <script type="text/javascript">
+    function MM_validateForm() { //v4.0
+  if (document.getElementById){
+    var i,p,q,nm,test,num,min,max,errors='',args=MM_validateForm.arguments;
+    for (i=0; i<(args.length-2); i+=3) { test=args[i+2]; val=document.getElementById(args[i]);
+      if (val) { nm=val.name; if ((val=val.value)!="") {
+        if (test.indexOf('isEmail')!=-1) { p=val.indexOf('@');
+          if (p<1 || p==(val.length-1)) errors+='- '+nm+' must contain an e-mail address.\n';
+        } else if (test!='R') { num = parseFloat(val);
+          if (isNaN(val)) errors+='- '+nm+' must contain a number.\n';
+          if (test.indexOf('inRange') != -1) { p=test.indexOf(':');
+            min=test.substring(8,p); max=test.substring(p+1);
+            if (num<min || max<num) errors+='- '+nm+' must contain a number between '+min+' and '+max+'.\n';
+      } } } else if (test.charAt(0) == 'R') errors += '- '+nm+' is required.\n'; }
+    } if (errors) alert('The following error(s) occurred:\n'+errors);
+    document.MM_returnValue = (errors == '');
+} }
+</script>
+    
+		<h1>Booking</h1>
+        
+	</div>
+	<div data-role="content"
+   onClick="MM_validateForm('name','','R');MM_validateForm('name','','R','email','','RisEmail','card no.','','RisNum','address','','R','postcode','','R');return document.MM_returnValue"> 
+  <form id="booking" name="booking" method="post"  action="confirmation.php">
+    <table width="50" border = "0" cell padding = "0" onfocus="MM_validateForm('card no.','','RisNum');return document.MM_returnValue">
+ <td width="25%" onfocus="MM_validateForm('name','','R');return document.MM_returnValue">name:
+  
+  <input name="name" type="text" id="name" size="40" maxlength="20">
+</td>
+
+<tr>
+  <td onfocus="MM_validateForm('email','','NisEmail');return document.MM_returnValue">Email:
+<input name="email" type="text" id="email" size="40" maxlength="30">
+</td></tr>
+
+<td width="25%">people:
+<select name="tables">
+<option value=" 1 person"> 1 person </option>
+<option value=" 2 people"> 2 people</option>
+<option value="3 people "> 3 people </option>
+<option value="4 people "> 4 people </option>
+<option value="5 people "> 5 people </option>
+<option value="6 people "> 6 people </option>
+<option value="7 people "> 7 people </option>
+<option value="8 people "> 8 people </option>
+<option value="9 people "> 9 people </option>
+<option value="10 people "> 10 people </option>
+<option value="11 people "> 11 people </option>
+<option value="12 people "> 12 people </option>
+<option value="13 people "> 13 people </option>
+<option value="14 people "> 14 people </option>
+<option value="15 people "> 15 people </option>
+<option value="16 people "> 16 people </option>
+<option value="17 people "> 17 people </option>
+<option value="18 people "> 18 people </option>
+<option value="19 people "> 19 people </option>
+<option value="20 people "> 20 people </option>
+</select>
+</td>
+<tr> <td> card number: 
+<input name="card no." type="password" id="card no." value=" "  size="40" maxlength="20">
+</td></tr>
+
+
+<tr> <td> 
+address:
+<input name ="address"  type="text" id="address" max size="40" maxlength="50">
+</td> </tr>
+
+<tr> <td>
+postcode:
+<input name ="postcode" type="text" id="postcode" size="40" maxlength="30">
+</td> </tr>
+
+<tr> <td> 
+telephone: 
+<input name ="telephone" type="tel"  size="40" maxlength="12">
+
+</td> </tr>
+
+<tr> <td>
+date:
+<input name="date" type="date"  size="40" maxlength="30">
+
+</td> 
+  </tr>
+
+<tr> <td>
+time:
+<input name = "time" type="time" size="40" maxlength="20">
+
+</td> </tr>
+
+<tr>
+<td><input type="submit" name="Submit" value="Submit"></td>
+</tr>
+
+
+</table>
+</form>
+        
+ 
+ 
+  
+
+   </div>
+   <div>
+		<ul data-role="listview">
+       <li><a href="#page1">Home</a></li>
+			<li><a href="#page2">Menu</a></li>
+            <li><a href="#page3">Booking</a></li>
+			<li><a href="#page4">Slideshow</a></li> 
+            <li><a href="#page5">Report</a></li>
+            </ul>		
+	</div>
+	</div>
+
+<div data-role="page" id="page4">
+	<div data-role="header">
+        <script src="jquery.cycle.all.js" type="text/javascript"></script>
+<script src="jquery-2.1.3.min.js" type="text/javascript"></script>
+<script src="slidejavascript.js" type="text/javascript"></script>
+      <h1>Slideshow</h1>
+    </div>
+<head>
+<link href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" rel="stylesheet" type="text/css"/>
+
+<script src="http://code.jquery.com/jquery-1.8.3.min.js" type="text/javascript"></script>
+<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js" type="text/javascript"></script>
+
+<link href="slide.css" rel="stylesheet" type="text/css">
+</head>
+    
+    <div data-role="content">
+    
+    
+    
+      <div id="slideshow">
+
+<div id="next">&rang;</div>
+
+<div id="prev">&lang;</div>
+
+
+<div id="slider">
+
+<img src="../mobileapp/mobile app images/img1.jpg" width="400" height="430">
+<img src="../mobileapp/mobile app images/img2.jpg" width="400" height="430">
+<img src="../mobileapp/mobile app images/img3.jpg" width="400" height="430">
+<img src="../mobileapp/mobile app images/img4.jpg" width="400" height="430">
+<img src="../mobileapp/mobile app images/img5.jpg" width="400" height="430">
+<img src="../mobileapp/mobile app images/img6.jpg" width="400" height="430">
+<img src="../mobileapp/mobile app images/img7.jpg" width="400" height="430">
+</div>
+
+    </div>
+</div>
+    
+  <div>
+    <ul data-role="listview">
+   <li><a href="#page1">Home</a> </li>
+			<li><a href="#page2">Menu</a></li>
+            <li><a href="#page3">Booking</a></li>
+			<li><a href="#page4">Slideshow</a></li> 
+            <li><a href="#page5">Report</a></li></ul>	
+    
+ </div>
+    </div>
+
+ 
+    <div data-role="page" id="page5">
+	<div data-role="header">
+		<h1>Report</h1>
+	</div>
+	<div data-role="content">
+    	  <h3 style="text-align:center"> report  </h3>
+  <p>I made the logo myself using Photoshop which I found quite changeling to do a first, but will spending more time on it I did it in the end. </p>
+  <p> I made the page layout using, CSS and selected the colour scheme, which was mainly shades of blue due to the fact the restaurant is a fish one. I am pleased with the way that the web pages look. The only decision that I had to make was the different blues I was going to use.  I also used CSS to design the navigation bar and made it with rounded corners, which has red around because the red to the blue provides good contrast, which makes it clear to see, similar to the words, which are black and the background is blue. I added a hover feature for the navigation bar, which means when you hover over part of the bar it will change colour, which tells you the page that you will go to if you click it.  </p>
+<p> To design the menu I used a xml file and styled it using css and used javascript code to make it display on the HTML page that  I wanted. When I made changes to the CSS code, the XML was not changing in HTML. It took be a while to figure out why it was not working, but when the problem was solved it was quite easy  </p>
+<p> I used Dreamweaver validation for validating the different forms that I used, which is in the form of JavaScript. My validations were not working correctly, to begin with, but once I changed to onclick it worked.</p>
+<p> To create the buttons for the next and previous for the slide show I used HTML,t o design them I used CSS, and to make the buttons work I used Jquery and Jquery library’s for it to work. I found this quite simply to do and did not have any major difficulties doing this </p>
+<p> To make the mobile app I found quite tricky as it took me a while to figure out the default, such as where to put things, so I could design it how I wanted to which is similar to my website pages. I created the mobile app using phone gap. I also created a mobile app preview via a link so you can what it will look like when you download it on your mobile phone. I made a icon that when you scan it with your phone 
+</p>
+<p> The website could be improved is the slideshow for the mobile app is not working as when you press the previous and back buttons they do not work. I could have added captions for the slide show with a description of what each picture is represents. I also could have improved the website by using meta-tags for all the web pages. One other way that I could have improved the website, is for the slide show I could have added more buttons such as buttons which take the slide show to the first picture and another one that shows the last picture. </p>
+<h4 style="text-align:center"> references </h4>
+   <p> http://www.w3schools.com/xml/xml_to_html.asp </p>
+   <p> https://www.youtube.com/watch?v=04YPThE5rJQ </p>
+   <p> https://now.ntu.ac.uk/d2l/le/content/307359/viewContent/1400302/View </p>
+  </div>
+  
+  <div>
+ 		<ul data-role="listview">
+        <li><a href="#page1">Home</a> </li>
+			<li><a href="#page2">Menu</a></li>
+            <li><a href="#page3">Booking</a></li>
+			<li><a href="#page4">Slideshow</a></li> 
+            <li><a href="#page5">Report</a></li>
+            </ul>
+            </div>
+	
+	</div>
+
+
+  
+    
+   
+            
+        		
+	
+
+</body>
+</html>

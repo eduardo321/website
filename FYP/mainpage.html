@@ -1,0 +1,1302 @@
+<!doctype html>
+<html>
+<head>
+<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.2/jquery.flot.min.js"></script>
+
+<script type="text/javascript">
+
+
+
+
+function MM_validateForm() { //v4.0
+  if (document.getElementById){
+    var i,p,q,nm,test,num,min,max,errors='',args=MM_validateForm.arguments;
+    for (i=0; i<(args.length-2); i+=3) { test=args[i+2]; val=document.getElementById(args[i]);
+      if (val) { nm=val.name; if ((val=val.value)!="") {
+        if (test.indexOf('isEmail')!=-1) { p=val.indexOf('@');
+          if (p<1 || p==(val.length-1)) errors+='- '+nm+' must contain an e-mail address.\n';
+        } else if (test!='R') { num = parseFloat(val);
+          if (isNaN(val)) errors+='- '+nm+' must only use numbers.\n';
+          if (test.indexOf('inRange') != -1) { p=test.indexOf(':');
+            min=test.substring(8,p); max=test.substring(p+1);
+            if (num<min || max<num) errors+='- '+nm+' must contain a number between '+min+' and '+max+'.\n';
+      } } } else if (test.charAt(0) == 'R') errors += '- '+nm+' is required.\n'; }
+    } if (errors) alert('The following error(s) occurred:\n'+errors);
+    document.MM_returnValue = (errors == '');
+} }
+</script>
+
+
+<meta charset="utf-8">
+<title>Untitled Document</title>
+  </head>
+<style type="text/css">
+
+body { background-color:#FFF 
+}
+
+#wrapper {
+	height: 1200px;
+	width: 1600px;
+	background-color:#F7F7F7;
+	padding-top:10px;
+	padding-left:30px;
+	padding-right:10px;
+	
+	
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+table#t01 {
+    width:30%;    
+    background-color:#f1f1c1;
+	float:left;
+	font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	font-size:13px;
+	padding-top:20px;
+}
+table#t02 {
+	width:30%;
+	background-color: #f1f1c1;
+	float:left;
+	font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	font-size:13px;
+	padding-top:20px;
+	margin-left:10px;
+	}
+table#t03 {
+ width:30%;
+ background-color:#f1f1c1; 
+ float:left;
+ font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;	
+ font-size:13px;
+ padding-top:20px;
+ margin-left:10px;
+
+}
+
+#placeholder 
+    { width:1100px; 
+	height:600px;
+	top:600px; 
+	left:100px;
+	}
+
+.p1 {
+	color:#2A59C7;
+}
+	
+	
+#store
+{
+height:200px;
+width:50px;
+float:right;
+left:200px;
+}
+
+#smoothing
+{
+	width:500px;
+	height:250px;
+	float:left;
+	text-align:center;
+	 font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;	
+     font-size:13px;
+}
+
+
+
+#myProgress {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  background-color: #ddd;
+}
+
+#myBar {
+  position: absolute;
+  width: 10%;
+  height: 100%;
+  background-color: #4CAF50;
+}
+
+#label {
+  text-align: center;
+  line-height: 20px;
+  color: white;
+}
+
+</style>
+
+<body>
+<div id="wrapper">
+<table id="t01">
+  <tr>
+    <th>Sample Parameters</th>
+    <th>Sorting </th>		
+    <th></th>
+  </tr>
+  <tr>
+    <td> <form> FabricatedBy: <input type="text" id="myIn" name="FabricatedBy" onfocus="focusFunction()" onblur="blurFunction()"   size="15">
+     </form>
+ 
+	 <script>
+function focusFunction() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn").style.background = "yellow";
+}
+
+function blurFunction() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn").style.background = "";
+}
+	 
+</script>
+	 
+ </td>
+    <td> <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+        <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked> </td>		
+    <td> <input type="checkbox" value="#"></td>
+  </tr>
+  <tr>
+    <td> <form> FabricationData: <input type="text" id="myIn2" name="FabricationData" onfocus="focusFunction2()" onblur="blurFunction2()"   size="15">
+     </form>
+        
+        	 <script>
+function focusFunction2() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn2").style.background = "yellow";
+}
+
+function blurFunction2() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn2").style.background = "";
+}
+	 
+</script>
+	 
+        
+    </td>
+    <td> <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+        <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked></td>		
+    <td><input type="checkbox" value="#"></td>
+  </tr>
+  <tr>
+    <td> <form> InterlayerMaterial: 
+              <select name = "InterlayerMaterial" id="myIn3" onfocus="focusFunction3()" onblur="blurFunction3();"> 
+       <option value = "1          ">1</option>
+       <option value="2">2</option>
+       </select>
+       </form>
+               	 <script>
+function focusFunction3() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn3").style.background = "yellow";
+}
+
+function blurFunction3() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn3").style.background = "";
+}
+	 
+</script>
+	 
+       
+       </td>
+    <td> <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+        <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked></td>		
+    <td><input type="checkbox" value="#"></td>
+  </tr>
+  <tr>
+    <td> <form> InterlayerThickness:
+        <input  type="text" id="myIn4" name="InterlayerThickness" size="15" align="top" onfocus="focusFunction4()" onblur="blurFunction4()"> </form>
+      </td>
+        
+          	 <script>
+function focusFunction4() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn4").style.background = "yellow";
+}
+
+function blurFunction4() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn4").style.background = "";
+}
+	 
+</script>
+	 
+    <td> <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+        <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked></td>		
+    <td><input type="checkbox" value="#"></td>
+  </tr>
+  <tr>
+    <td>  <form> SampleName:
+      <input  type="text" id="myIn5" size="15" align="top" onfocus="focusFunction5()" onblur="blurFunction5()"> </form> </td>
+   	  <script> 
+function focusFunction5() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn5").style.background = "yellow";
+}
+
+function blurFunction5() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn5").style.background = "";
+}
+	 
+</script>
+	 
+         
+    <td> <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+        <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked></td>		
+    <td><input type="checkbox" value="#"></td>
+  </tr>
+  <tr>
+    <td><form> SubstrateType: 
+              <select name = "SubstrateType" id="myIn6" onfocus="focusFunction6()" onblur="blurFunction6();"> 
+       <option value = "1">1</option>
+       <option value="2">2</option>
+       </select>
+       </form>
+       </td>
+                     	 <script>
+function focusFunction6() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn6").style.background = "yellow";
+}
+
+function blurFunction6() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn6").style.background = "";
+}
+	 
+</script>
+	 
+    <td> <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+        <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked></td>		
+    <td><input type="checkbox" value="#"></td>
+  </tr>
+  <tr>
+    <td> <form> ThinFilmDepTech: 
+              <select name = "ThinFilmDepTech"  id="myIn7" onfocus="focusFunction7()" onblur="blurFunction7();"> 
+       <option value = "1">1</option>
+       <option value="2">2</option>
+       </select>
+        </form> </td>
+                           	 <script>
+function focusFunction7() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn7").style.background = "yellow";
+}
+
+function blurFunction7() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn7").style.background = "";
+}
+	 
+</script>
+        
+    <td> <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+        <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked></td>		
+    <td><input type="checkbox" value="#"></td>
+  </tr>
+   <tr>
+    <td> <form> ThinFilmMaterial: 
+              <select name = "ThinFilmMaterial"   id="myIn8" onfocus="focusFunction8()" onblur="blurFunction8();" > 
+       <option value = "1">1</option>
+       <option value="2">2</option> 
+       </select> 
+       </form> </td>
+                               	 <script>
+function focusFunction8() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn8").style.background = "yellow";
+}
+
+function blurFunction8() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn8").style.background = "";
+}
+	 
+</script>
+    <td> <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+        <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked></td>		
+    <td><input type="checkbox" value="#"></td>
+  </tr>
+   <tr>
+    <td> <form> ThinFilmThickness:
+        <input type="text" name="ThinFilmThickness" id="myIn9" size="15" align="top"  onfocus="focusFunction9()" onblur="blurFunction9()">    
+      </form> </td>
+        
+                                    	 <script>
+function focusFunction9() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn9").style.background = "yellow";
+}
+
+function blurFunction9() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn9").style.background = "";
+}
+	 
+</script>
+    
+    <td> <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+        <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked></td>		
+    <td><input type="checkbox" value="#"></td>
+  </tr>
+</table>
+
+<table id="t02">
+  <tr>
+    <th>Spot Parameters</th>
+    <th>Sorting </th>		
+    <th></th>
+  </tr>
+  <tr>
+    <td> 
+      
+      EnviromentPressure: 
+       <input name="EnviromentPressure" type="text" required id="myIn10"  onfocus="focusFunction10()" onblur="blurFunction10()"   size="15" align="top" >
+     
+      </td>
+                                          	 <script>
+function focusFunction10() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn10").style.background = "yellow";
+}
+
+function blurFunction10() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn10").style.background = "";
+}
+	 
+</script>
+      
+      
+    <td> <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+        <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked> </td>		
+    <td><input type="checkbox" value="#"></td>
+  </tr>
+  <tr>
+    <td>  EnviromentTemperature: 
+       <input type="text" name="EnviromentPressure" id="myIn11"  onfocus="focusFunction11()" onblur="blurFunction11();MM_validateForm('myIn11','','NisNum');return document.MM_returnValue"  size="15" align="top">
+        <br>
+     </td>
+     <script>
+function focusFunction11() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn11").style.background = "yellow";
+}
+
+function blurFunction11() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn11").style.background = "";
+}
+	 
+</script>
+          
+    <td> <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+        <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked> </td>		
+    <td><input type="checkbox" value="#"></td>
+  </tr>
+  <tr>
+    <td>  Fluence: 
+       <input type="text" name="Fluence"  size="15" id="myIn12"   align="top"  onfocus="focusFunction12()" onblur="blurFunction12();" > 
+      </td>
+      
+  <script>
+function focusFunction12() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn12").style.background = "yellow";
+}
+
+function blurFunction12() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn12").style.background = "";
+}
+	 
+</script>
+      
+    <td> <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+        <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked> </td>		
+    <td><input type="checkbox" value="#"></td>
+  </tr>
+   <tr>
+    <td> GasActive: 
+              <select name = "ThinFilmDepTech" id="myIn13" onfocus="focusFunction13()" onblur="blurFunction13();"> 
+       <option value = "1">1</option>
+       <option value="2">2</option>
+       </select>
+      </td>
+      
+       <script>
+function focusFunction13() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn13").style.background = "yellow";
+}
+
+function blurFunction13() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn13").style.background = "";
+}
+	 
+</script>
+      
+    <td> <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+        <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked> </td>		
+    <td><input type="checkbox" value="#"></td>
+  </tr>
+   <tr>
+    <td> GasActiveConcentration: 
+       <input type="text" name="GasActiveConcentration"  size="15" align="top"  id="myIn14" onfocus="focusFunction14()" onblur="blurFunction14()" > 
+      </td>
+             <script>
+function focusFunction14() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn14").style.background = "yellow";
+}
+
+function blurFunction14() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn14").style.background = "";
+}
+	 
+</script>
+      
+    <td> <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+        <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked> </td>		
+    <td><input type="checkbox" value="#"></td>
+  </tr>
+  
+   <tr>
+    <td> Gaslnet: 
+              <select name = "Gaslnet"  id="myIn15" onfocus="focusFunction15()" onblur="blurFunction15();" > 
+       <option value = "1">1</option>
+       <option value="2">2</option>
+       </select>
+      </td>
+      
+       <script>
+function focusFunction15() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn15").style.background = "yellow";
+}
+
+function blurFunction15() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn15").style.background = "";
+}
+	 
+</script>
+      
+    <td> <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+        <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked> </td>		
+    <td><input type="checkbox" value="#"></td>
+  </tr>
+   <tr>
+    <td>  NumberOfPulses: 
+       <input type="text" name="NumberOfPulses"  size="15" align="top" id="myIn16" onfocus="focusFunction16()" onblur="blurFunction16();MM_validateForm('myIn16','','NisNum');return document.MM_returnValue">
+     </td>
+          <script>
+function focusFunction16() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn16").style.background = "yellow";
+}
+
+function blurFunction16() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn16").style.background = "";
+}
+	 
+</script>
+     
+    <td> <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+        <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked> </td>		
+    <td><input type="checkbox" value="#"></td>
+  </tr>
+   <tr>
+    <td>Polarisation: 
+              <select name = "Polarisation" id="myIn17" onfocus="focusFunction17()" onblur="blurFunction17();" > 
+       <option value = "1">1</option>
+       <option value="2">2</option>
+       </select>
+      </td>
+      
+                <script>
+function focusFunction17() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn17").style.background = "yellow";
+}
+
+function blurFunction17() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn17").style.background = "";
+}
+	 
+</script>
+     
+    <td> <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+        <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked> </td>		
+    <td><input type="checkbox" value="#"></td>
+  </tr>
+   <tr>
+    <td>   PulseDuration: 
+       <input type="text" name="PulseDuration"  size="15" align="top"  id="myIn18" onfocus="focusFunction18()" onblur="blurFunction18();MM_validateForm('myIn18','','NisNum');return document.MM_returnValue">
+      </td>
+                      <script>
+function focusFunction18() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn18").style.background = "yellow";
+}
+
+function blurFunction18() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn18").style.background = "";
+}
+	 
+</script>
+     
+    <td> <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+        <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked> </td>		
+    <td><input type="checkbox" value="#"></td>
+  </tr>
+  <tr>
+    <td>     RepetitionRate: 
+       <input type="text" name="RepetitionRate" size="15" align="top"  id="myIn19" onfocus="focusFunction19()" onblur="blurFunction19();MM_validateForm('myIn19','','NisNum');return document.MM_returnValue">
+      </td>
+                          <script>
+function focusFunction19() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn19").style.background = "yellow";
+}
+
+function blurFunction19() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn19").style.background = "";
+}
+	 
+</script>
+    <td> <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+        <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked> </td>		
+    <td><input type="checkbox" value="#"></td>
+  </tr>
+  <tr>
+    <td>  SpotDimension: 
+       <input type="text" name="SpotDimension"  size="15" align="top"  id="myIn20" onfocus="focusFunction20()" onblur="blurFunction20();">
+      </td>
+                               <script>
+function focusFunction20() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn20").style.background = "yellow";
+}
+
+function blurFunction20() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn20").style.background = "";
+}
+	 
+</script>
+    <td> <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+        <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked> </td>		
+    <td><input type="checkbox" value="#"></td>
+  </tr>
+  
+  <tr>
+    <td>   SpotShape: 
+              <select name = "SpotShape"  id="myIn21" onfocus="focusFunction21()" onblur="blurFunction21();"> 
+       <option value = "1">1</option>
+       <option value="2">2</option>
+       </select>
+      </td>
+                                     <script>
+function focusFunction21() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn21").style.background = "yellow";
+}
+
+function blurFunction21() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn21").style.background = "";
+}
+      </script>
+      
+    <td> <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+        <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked> </td>		
+    <td><input type="checkbox" value="#"></td>
+  </tr>
+  
+   <tr>
+    <td> Wavelength: <input type="text" name="Wavelength" size="15"  align="top" id="myIn22" onfocus="focusFunction22()" onblur="blurFunction22();MM_validateForm('myIn22','','NisNum');return document.MM_returnValue"> </td>
+                                        <script>
+function focusFunction22() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn22").style.background = "yellow";
+}
+
+function blurFunction22() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn22").style.background = "";
+}
+      </script>
+      
+      
+    <td> <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+        <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      
+      
+       <input type = "radio" name="#" align="texttop"
+      value ="#" checked> </td>		
+    <td><input type="checkbox" value="#"></td>
+  </tr>
+  </table>
+<table id="t03">
+  <tr>
+    <th>Measurement Parameters</th>
+    <th>Sorting </th>
+    <th></th>
+  </tr>
+  <tr>
+    <td> IncidenceAngle:
+      <input name="IncidenceAngle" type="text" required id="myIn23" onfocus="focusFunction23()" onblur="blurFunction23();MM_validateForm('myIn23','','NisNum');return document.MM_returnValue" size="15" align="top"></td>
+      <script>
+function focusFunction23() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn23").style.background = "yellow";
+}
+
+function blurFunction23() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn23").style.background = "";
+}
+      </script>
+    <td><input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      <input type = "radio" name="#" size="3" align="texttop"
+      value ="#" checked>
+      <input type = "radio" name="#" align="texttop"
+      value ="#" checked></td>
+    <td><input type="checkbox" value="#"></td>
+  </tr>
+  <tr>
+    <td>IncidencePol:
+      <select name = "IncidencePol" id="myIn24" onfocus="focusFunction24()" onblur="blurFunction24();">
+        <option value = "1">1</option>
+        <option value="2">2</option>
+      </select></td>
+                                              <script>
+function focusFunction24() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn24").style.background = "yellow";
+}
+
+function blurFunction24() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn24").style.background = "";
+}
+      </script>
+    <td><input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      <input type = "radio" name="#" align="texttop"
+      value ="#" checked></td>
+    <td><input type="checkbox" value="#"></td>
+  </tr>
+  <tr>
+    <td> LampType:
+      <select name = "LampType" id="myIn25" onfocus="focusFunction25()" onblur="blurFunction25();">
+        <option value = "1">1</option>
+        <option value="2">2</option>
+      </select></td>
+                                               <script>
+function focusFunction25() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn25").style.background = "yellow";
+}
+
+function blurFunction25() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn25").style.background = "";
+}
+      </script>
+    <td><input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      <input type = "radio" name="#" align="texttop"
+      value ="#" checked></td>
+    <td><input type="checkbox" value="#"></td>
+  </tr>
+  <tr>
+    <td> MeasuredBy:
+      <input type="text" name="MeasuredBy"  size="15" align="top" id="myIn26" onfocus="focusFunction26()" onblur="blurFunction26();"></td>
+                                                   <script>
+function focusFunction26() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn26").style.background = "yellow";
+}
+
+function blurFunction26() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn26").style.background = "";
+}
+      </script>
+    <td><input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      <input type = "radio" name="#" align="texttop"
+      value ="#" checked></td>
+    <td><input type="checkbox" value="#"></td>
+  </tr>
+  <tr>
+    <td> MeasuredOrCalc:
+      <select name = "MeasuredOrCalc"  id="myIn27" onfocus="focusFunction27()" onblur="blurFunction27();">
+        <option value = "1">1</option>
+        <option value="2">2</option>
+      </select></td>
+                                                       <script>
+function focusFunction27() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn27").style.background = "yellow";
+}
+
+function blurFunction27() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn27").style.background = "";
+}
+      </script>
+      
+    <td><input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      <input type = "radio" name="#" align="texttop"
+      value ="#" checked></td>
+    <td><input type="checkbox" value="#"></td>
+  </tr>
+  <tr>
+    <td> MeasurementDate:
+      <input type="text" name="MeasurementDate" size="15"  align="top" id="myIn28" onfocus="focusFunction28()" onblur="blurFunction28();"></td>
+                                                       <script>
+function focusFunction28() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn28").style.background = "yellow";
+}
+
+function blurFunction28() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn28").style.background = "";
+}
+      </script>
+    <td><input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      <input type = "radio" name="#" align="texttop"
+      value ="#" checked></td>
+    <td><input type="checkbox" value="#"></td>
+  </tr>
+  <tr>
+    <td>Mirror:
+      <select name = "Mirror" id="myIn29" onfocus="focusFunction29()" onblur="blurFunction29();">
+        <option value = "1">1</option>
+        <option value="2">2</option>
+      </select></td>
+                                                             <script>
+function focusFunction29() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn29").style.background = "yellow";
+}
+
+function blurFunction29() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn29").style.background = "";
+}
+      </script>
+    <td><input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      <input type = "radio" name="#" align="texttop"
+      value ="#" checked></td>
+    <td><input type="checkbox" value="#"></td>
+  </tr>
+  <tr>
+    <td>ReflectionAngle:
+      <input type="text" name="ReflectionAngle"  size="15" align="top" id="myIn30" onfocus="focusFunction30()" onblur="blurFunction30();MM_validateForm('myIn30','','NisNum');return document.MM_returnValue"></td>
+      <script>
+function focusFunction30() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn30").style.background = "yellow";
+}
+
+function blurFunction30() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn30").style.background = "";
+}
+      </script>
+    <td><input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      <input type = "radio" name="#" align="texttop"
+      value ="#" checked></td>
+    <td><input type="checkbox" value="#"></td>
+  </tr>
+  <tr>
+    <td> ReflectionPol:
+      <select name = "ReflectionPol" id="myIn31" onfocus="focusFunction31()" onblur="blurFunction31();">
+        <option value = "1">1</option>
+        <option value="2">2</option>
+      </select></td>
+                                                                      <script>
+function focusFunction31() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn31").style.background = "yellow";
+}
+
+function blurFunction31() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn31").style.background = "";
+}
+      </script>
+    <td><input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      <input type = "radio" name="#" align="texttop"
+      value ="#" checked></td>
+    <td><input type="checkbox" value="#"></td>
+  </tr>
+  <tr>
+    <td> Spectrometer:
+      <select name = "Spectrometer" id="myIn32" onfocus="focusFunction32()" onblur="blurFunction32();">
+        <option value = "1">1</option>
+        <option value="2">2</option>
+      </select></td>
+                                                                          <script>
+function focusFunction32() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn32").style.background = "yellow";
+}
+
+function blurFunction32() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn32").style.background = "";
+}
+      </script>
+    <td><input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      <input type = "radio" name="#" align="texttop"
+      value ="#" checked>
+      <input type = "radio" name="#" align="texttop"
+      value ="#" checked></td>
+    <td><input type="checkbox" value="#"></td>
+  </tr>
+</table>
+
+<div id="smoothing">
+
+<form>
+                 smoothing: 
+              <select name = "smoothing" id="myIn33" onfocus="focusFunction33()" onblur="blurFunction33();"> 
+       <option value = "1">1</option>
+       <option value="2">2</option>
+        <option value="3">3</option>
+         <option value="4">4</option>
+          <option value="5">5</option>
+           <option value="6">6</option>
+            <option value="7">7</option>
+             <option value="8">8</option>
+              <option value="9">9</option>
+               <option value="10">10</option>
+                <option value="11">11</option>
+       </select>
+       <br>
+       <br>
+                                                                          <script>
+function focusFunction33() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn33").style.background = "yellow";
+}
+
+function blurFunction33() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn33").style.background = "";
+}
+      </script>
+<button  type="button"> previous</button> 
+
+ <input type= "button" value ="next" onClick="javascript:popUp('popup1.html');" >
+
+ 
+<script>
+
+function popUp(URL) {
+day = new Date();
+id = day.getTime();
+eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=200,height=400');");
+}
+
+</script>
+
+<script>
+
+function myFunction2() {
+	
+numbers = 20;
+	
+var points = parseInt(prompt("Pick a number of points between 1-20?"));
+
+while (points > numbers) {
+  var points = parseInt(prompt("Pick a number of points between 1-20?"));
+  
+}
+  
+ 
+
+
+	var yourNumber = parseInt(prompt("Pick a number of graphs?"));
+
+if (yourNumber < 50) {
+	
+	alert("graphs have been found");
+	
+}else if  (yourNumber < 100) {
+	
+	confirm("graphs may take a long time would you like to continue");
+
+	
+}else{
+	
+	confirm("too many graphs would you like to see the first 10 pages");
+	
+}
+	
+}
+
+
+</script>
+
+
+
+
+<div id="myProgress">
+  <div id="myBar">
+    <div id="label">10%</div>
+  </div>
+</div>
+
+<br>
+
+<input  type="button"  name="submit"  value="submit" onclick=  "myVar = setTimeout(myFunction2, 3200); move()"> 
+<button  type="button" onclick="clearTimeout(myVar);  end();">Stop search</button> 
+<script>
+function move() {
+  var elem = document.getElementById("myBar");   
+  var width = 0;
+  var id = setInterval(frame,30);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+      document.getElementById("label").innerHTML = width * 1  + '%';
+    }
+  }
+}
+
+</script>
+ 
+ <script>
+ function end() {
+	 alert(" search has been stopped");
+ }
+ 
+ </script>
+ 
+<p> number of hits 40 </p>
+ <br>
+<h4 class="p1"> <button type="button">Prepare for export </button>
+                 download </h4>
+                    no.of graphs: 
+              <select name = "no.of graphs" id="myIn34" onfocus="focusFunction34()" onblur="blurFunction34();"> 
+       <option value = "1">1</option>
+       <option value="2">2</option>
+        <option value="3">3</option>
+         <option value="4">4</option>
+          <option value="5">5</option>
+           <option value="6">6</option>
+           </select>
+ </form>
+                                                                         <script>
+function focusFunction34() {
+    // Focus = Changes the background color of input to yellow
+    document.getElementById("myIn34").style.background = "yellow";
+}
+
+function blurFunction34() {
+    // No focus = Changes the background color of input to red
+    document.getElementById("myIn34").style.background = "";
+}
+      </script>
+
+
+</div>
+
+<div id="placeholder"> </div>
+
+
+ 
+</div>
+</div>
+
+</body>
+</html>
